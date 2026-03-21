@@ -1,0 +1,66 @@
+/* Full screen center layout */
+.welcome-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Main content box */
+.welcome-content {
+  max-width: 500px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Image styling */
+.welcome-image {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 25px;
+}
+
+/* Heading */
+.welcome-content h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Subtitle */
+.welcome-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Button */
+.start-btn {
+  padding: 12px 28px;
+  font-size: 16px;
+  background-color: #00c853;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #009624;
+  transform: translateY(-2px);
+}
+
+/* Smooth fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

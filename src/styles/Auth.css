@@ -1,0 +1,128 @@
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.auth-box {
+  width: 360px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.auth-box h2 {
+  margin-bottom: 20px;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* MAIN LOGIN BUTTON */
+.main-btn {
+  width: 80%;
+  padding: 10px;
+  background: #00c853;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.main-btn:hover {
+  background: #009624;
+}
+
+.divider {
+  margin: 20px 0;
+  font-size: 14px;
+  color: #888;
+}
+
+/* SOCIAL BUTTON BASE */
+.social-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.social-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* GOOGLE */
+.social-btn.google {
+  background: white;
+  color: #333;
+}
+
+.social-btn.google:hover {
+  background: #f5f5f5;
+}
+
+/* FACEBOOK */
+.social-btn.facebook {
+  background: #1877f2;
+  color: white;
+  border: none;
+}
+
+.social-btn.faceboook:hover {
+  background: #166fe5;
+}
+
+.social-btn.faceboook img {
+  filter: brightness(0) invert(1);
+}
+
+.auth-box p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.auth-box span {
+  color: #00c853;
+  cursor: pointer;
+  font-weight: 500;
+}
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 70%;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 13px;
+  color: #00c853;
+  font-weight: 600;
+}
