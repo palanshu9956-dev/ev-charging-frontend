@@ -1,29 +1,78 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 
 import Welcome from "./pages/Welcome";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import ProfileSetup from "./pages/ProfileSetup";
 
+/* PROTECTED ROUTE */
+function ProtectedRoute({ children }) {
+
+  const isLoggedIn =
+    localStorage.getItem("isLoggedIn");
+
+  return isLoggedIn
+    ? children
+    : <Navigate to="/auth" />;
+}
+
 function App() {
+
   return (
+
     <Router>
+
       <Routes>
 
-        {/* Welcome Page */}
-        <Route path="/" element={<Welcome />} />
+        {/* WELCOME */}
+        <Route
+          path="/"
+          element={<Welcome />}
+        />
 
-        {/* Login / Auth */}
-        <Route path="/auth" element={<Auth />} />
+        {/* AUTH */}
+        <Route
+          path="/auth"
+          element={<Auth />}
+        />
 
-        {/* Profile Setup */}
-        <Route path="/profile" element={<ProfileSetup />} />
+        {/* PROFILE */}
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <ProfileSetup />
+            </ProtectedRoute>
+          }
+        />
 
-        {/* Dashboard */}
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        {/* DASHBOARD */}
+        <Route
+          path="/dashboard/*"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* INVALID ROUTE */}
+        <Route
+          path="*"
+          element={
+            <Navigate to="/" />
+          }
+        />
 
       </Routes>
+
     </Router>
+
   );
 }
 
